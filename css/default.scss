@@ -46,7 +46,7 @@ header .pure-menu-link {
 .site-title.pure-menu-heading {
   text-transform: none;
   padding-left: 2.4em;
-  background-image: url("../assets/logo.png");
+  background-image: url("{{ site.baseurl }}/logo.png");
   background-repeat: no-repeat;
   background-size: auto 100%;
   margin: 0.6em 0;
@@ -137,7 +137,7 @@ h1 {
       width: 1.6rem;
     }
     .dsq-comment-count {
-      background: url('/blog/assets/sq_comment.png') no-repeat scroll 0% 0% / auto 100% #303030;
+      background: url('{{ site.baseurl }}/sq_comment.png') no-repeat scroll 0% 0% / auto 100% #303030;
       color: #fff;
       display: inline-block;
       height: 1.5rem;
