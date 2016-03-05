@@ -5,3 +5,5 @@ exclude:
   - Gemfile
   - LICENSE
   - README.md
+sass:
+  style: compressed
