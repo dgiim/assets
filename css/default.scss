@@ -308,7 +308,7 @@ nav.side {
 
     .projects-inner {
       text-align: center;
-      
+
       .card {
         display: inline-block;
         background: $foreground;
@@ -378,7 +378,7 @@ footer {
 Button
 *******/
 .button {
-    background-color: #008CBA; /* Blue */
+    background-color: $theme; /* Blue */
     border: none;
     color: white;
     padding: 15px 32px;
