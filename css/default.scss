@@ -1,8 +1,10 @@
 ---
 ---
 
-$theme: lighten(#34495e, 15%);
-$foreground: #eee;
+//$theme: lighten(#34495e, 15%);
+$theme: #d0d0d0; // de da da da
+$accent: #3070a0;
+$foreground: #505050;
 
 body, .pure-g [class*="pure-u"] {
   font-family: Lato, 'Lato', sans-serif;
@@ -11,75 +13,97 @@ body, .pure-g [class*="pure-u"] {
 /*** Generic styles ***/
 
 h1, h1 .pure-g [class*="pure-u"] {
-  font-weight: 300;
+  //font-weight: 300;
 
   a {
     display: block;
-    text-decoration: none;
+    //text-decoration: none;
   }
 }
 
 a {
-  color: $theme;
+  color: $accent;
   text-decoration: none;
-}
 
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 
 /*** Header ***/
 header {
   background: lighten($theme, 10%);
-}
-header .pure-menu-link {
-  padding-top: 1.1em;
-  padding-bottom: 1.1em;
-  color: $foreground;
+  //border-bottom: 1px solid $theme;
+  box-shadow: 0 2px 2px -1px $theme;
+  font-size: 0.9em;
 
-  &.social-link {
-    color: lighten($theme, 30%);
-  }
-}
+  .pure-menu-link {
+    padding-top: 1.1em;
+    padding-bottom: 1.1em;
+    color: $foreground;
 
-.site-title.pure-menu-heading {
-  text-transform: none;
-  padding-left: 2.4em;
-  background-image: url("{{ site.baseurl }}/images/logo.png");
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  margin: 0.6em 0;
-  text-decoration: none;
-}
-.sites {
-  text-align: right;
-}
-  .sites a, .sites a:hover {
-    background: transparent;
+    &.social-link {
+      color: lighten($theme, 30%);
+    }
   }
-  .sites a:hover {
-    color: darken($foreground, 5%);
+
+  .site-title.pure-menu-heading {
+    text-transform: none;
+    padding-left: 2.4em;
+    background-image: url("{{ site.baseurl }}/images/logo.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    margin: 0.6em 0;
+    text-decoration: none;
   }
+  .sites {
+    text-align: right;
+    //font-size: 0.9em;
+    //font-weight: 600;
+    text-transform: uppercase;
+
+    a, a:hover {
+      padding-top: 1.1em / 0.9;
+      padding-bottom: 1.1em / 0.9;
+      background: transparent;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $accent;
+      background: $theme;
+    }
+  }
+}
 
 /*** Posts ***/
 article {
   h1 {
-    background: lighten($theme, 10%);
+    //background: lighten($theme, 10%);
     margin: 0;
     font-size: 250%;
+    font-weight: 600;
 
     a {
       padding-top: 2rem;
       color: $foreground;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
+
   .post-data {
     background: lighten($theme, 30%);
     padding: 0.6rem 0;
+    font-size: 0.94em;
+    color: darken($theme, 40%);
 
     a {
-      color: darken($theme, 20%);
+      color: darken($theme, 40%);
+      background: lighten($accent, 50%);
+      padding: 0 .4em;
 
       &.selected {
         color: #000;
@@ -88,10 +112,11 @@ article {
       }
     }
 
-    .date {
+    .date, .comments {
       display: inline-block;
-      margin-left: 1.2rem;
-      color: #666;
+      margin-left: 0.6rem;
+      background: lighten($theme, 10%);
+      padding: 0 .4em;
     }
     .edit-button {
       text-align: right;
@@ -130,9 +155,10 @@ article {
     }
 
     .share {
-      filter: gray;
-      filter: grayscale(1);
-      -webkit-filter: grayscale(1);
+      //filter: gray;
+      //filter: grayscale(1);
+      //-webkit-filter: grayscale(1);
+      opacity: 0.5;
 
       img {
         width: 1.6rem;
@@ -148,8 +174,9 @@ article {
       }
 
       &:hover {
-        filter: none;
-        -webkit-filter: grayscale(0);
+        //filter: none;
+        //-webkit-filter: grayscale(0);
+        opacity: 1;
       }
     }
 
@@ -364,6 +391,8 @@ footer {
 @media (min-width: 48em) {
   .site-title.pure-menu-heading:before {
     content: "LibreIM";
+    font-size: 1rem;
+    padding-left: 0.4em;
     color: darken($foreground, 10%);
   }
   h1 {
