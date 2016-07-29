@@ -8,12 +8,15 @@ $foreground: #505050;
 
 body, .pure-g [class*="pure-u"] {
   font-family: Lato, 'Lato', sans-serif;
+  font-size: 16px;
 }
 
 /*** Generic styles ***/
 
 h1, h1 .pure-g [class*="pure-u"] {
   //font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 600;
 
   a {
     display: block;
@@ -48,28 +51,31 @@ header {
     }
   }
 
-  .site-title.pure-menu-heading {
+  .site-title {
     text-transform: none;
-    padding-left: 2.4em;
     background-image: url("{{ site.baseurl }}/images/logo.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
     margin: 0.6em 0;
+    padding: 0.6em 1em 0.6em 2.4em;
     text-decoration: none;
   }
   .sites {
     text-align: right;
+    float: right;
+    display: inline-block;
     //font-size: 0.9em;
     //font-weight: 600;
     text-transform: uppercase;
 
-    a, a:hover {
-      padding-top: 1.1em / 0.9;
-      padding-bottom: 1.1em / 0.9;
+    a {
+      padding: 0.4em (1.1em / 0.9);
       background: transparent;
       text-decoration: none;
+      display: block;
     }
     a:hover {
+      text-decoration: none;
       color: $accent;
       background: $theme;
     }
@@ -78,14 +84,20 @@ header {
 
 /*** Posts ***/
 article {
+  padding-top: 1.4rem;
+
+  .category {
+    text-transform: uppercase;
+    color: darken($theme, 25%);
+    font-size: 0.94em;
+  }
+
   h1 {
     //background: lighten($theme, 10%);
     margin: 0;
-    font-size: 250%;
-    font-weight: 600;
 
     a {
-      padding-top: 2rem;
+      padding-top: 0.6rem;
       color: $foreground;
 
       &:hover {
@@ -101,8 +113,17 @@ article {
     color: darken($theme, 40%);
 
     a {
+      display: inline-block;
       color: darken($theme, 40%);
-      background: lighten($accent, 50%);
+
+      &.author {
+        background: lighten($accent, 50%);
+      }
+      &.date, &.comments, &.edit {
+        margin-left: 0.6rem;
+        background: lighten($theme, 10%);
+
+      }
       padding: 0 .4em;
 
       &.selected {
@@ -111,22 +132,11 @@ article {
         text-decoration: none;
       }
     }
-
-    .date, .comments {
-      display: inline-block;
-      margin-left: 0.6rem;
-      background: lighten($theme, 10%);
-      padding: 0 .4em;
-    }
-    .edit-button {
-      text-align: right;
-      display: none;
-    }
   }
 
   .post-content {
     margin-bottom: 1.8rem;
-    line-height: 1.35em;
+    line-height: 1.4em;
 
     img {
       max-width: 100%;
@@ -393,17 +403,28 @@ footer {
 **********/
 
 @media (min-width: 48em) {
-  .site-title.pure-menu-heading:before {
-    content: "LibreIM";
-    font-size: 1rem;
-    padding-left: 0.4em;
-    color: darken($foreground, 10%);
+  header {
+    .site-title.pure-menu-heading:before {
+      content: "LibreIM";
+      font-size: 1rem;
+      padding-left: 0.4em;
+      color: darken($foreground, 10%);
+    }
+
+    .sites {
+      a {
+        display: inline-block;
+        padding-top: (1.1em / 0.9);
+        padding-bottom: (1.1em / 0.9);
+      }
+    }
   }
+
   h1 {
-    font-size: 300%;
+    font-size: 3rem;
   }
-  .post-data .edit-button {
-    display: inline-block;
+  article h1 {
+    font-size: 2.5rem;
   }
 }
 
