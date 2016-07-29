@@ -81,7 +81,7 @@ header {
     transition: height .2s ease-in-out;
 
     a {
-      padding: 0.6em (1.1em / 0.9);
+      padding: 0.6em 0.6em;
       background: transparent;
       text-decoration: none;
       display: block;
@@ -97,11 +97,18 @@ header {
   #show-menu {
     display: none;
 
-    & + label:before {
-      font-size: 2rem;
-      float: right;
-      display: inline-block;
-      padding: 0.5rem;
+    & + label {
+      &:before {
+        font-size: 2rem;
+        float: right;
+        display: inline-block;
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+
+      &:hover {
+        color: $accent;
+      }
     }
 
     &:not(:checked) + label {
@@ -475,6 +482,21 @@ footer {
     }
   }
 }
+
+/*******
+ Extra-large displays
+*******/
+@media (min-width: 80em) {
+  header {
+    .sites {
+      a {
+        padding-left: (1.1em / 0.9);
+        padding-right: (1.1em / 0.9);
+      }
+    }
+  }
+}
+
 
 /*******
 Button
