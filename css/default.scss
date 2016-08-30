@@ -213,6 +213,23 @@ article {
       max-width: 18rem;
     }
 
+    table {
+      border: 1px solid #d0d0d0;
+      
+      thead {
+        background: #f6f6f6;
+            
+    		th {
+    		  padding: 0.4rem 0.8rem;
+    		  border: 1px solid #d0d0d0;
+    		}
+    	}
+
+    	td {
+    	  padding: 0.4rem 0.8rem;
+    	}
+    }
+
     .share {
       //filter: gray;
       //filter: grayscale(1);
