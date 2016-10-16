@@ -164,7 +164,7 @@ article {
     font-size: 0.94em;
     color: darken($theme, 40%);
 
-    a {
+    a, span {
       display: inline-block;
       color: darken($theme, 40%);
       margin-bottom: 0.6rem;
