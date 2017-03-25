@@ -194,7 +194,7 @@ article {
       max-width: 100%;
     }
 
-    .fig {
+    .fig, .note {
       text-align: center;
       border: 1px solid #d0d0d0;
       overflow-x: auto;
@@ -233,6 +233,19 @@ article {
     	  padding: 0.4rem 0.8rem;
     	}
     }
+
+    .ejercicio {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: #efefef;
+    }
+    
+    .ejercicio > details {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: #efefef;
+    }
+    
 
     .share {
       //filter: gray;
