@@ -233,19 +233,40 @@ article {
     	  padding: 0.4rem 0.8rem;
     	}
     }
-
+    
     .ejercicio {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      background-color: #efefef;
+        background: #f6f6f6;
+        border: 1px solid #d0d0d0;
+        overflow-x: auto;
+        margin: 0 0 1rem;
+        padding: 0.6rem;
+        
+        summary {
+            cursor: pointer;
+            outline: none;
+
+            p {
+                display: inline;
+            }
+        }
     }
-    
-    .ejercicio > details {
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      background-color: #efefef;
+
+    details {
+        summary:before {
+            content: "▷";
+            display: inline-block;
+            margin-right: 0.6rem;
+            -webkit-transition: transform 0.2s ease;
+            -moz-transition: transform 0.2s ease;
+            transition: transform 0.2s ease;
+        }
+
+        &[open] summary:before {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
     }
-    
 
     .share {
       //filter: gray;
