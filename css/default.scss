@@ -81,7 +81,7 @@ header {
         overflow: hidden;
         //font-size: 0.9em;
         //font-weight: 600;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         transition: height .2s ease-in-out;
 
         a {
@@ -227,14 +227,17 @@ article {
             margin-bottom: 0.6rem;
             padding: 0 .4em;
 
-            &.author {
-                background: lighten($accent, 50%);
-            }
-            &.date, &.comments, &.edit {
+            &.date, &.comments, &.edit, &.license {
                 margin-left: 0.6rem;
                 background: lighten($theme, 10%);
             }
 
+            &.author {
+                background: lighten($accent, 50%);
+            }
+            &.license {
+                background: complement(lighten($accent, 50%));
+            }
             &.selected {
                 color: #000;
                 cursor: default;
@@ -590,6 +593,9 @@ footer {
     a {
         color: darken($theme, 40%);
     }
+}
+.align-right {
+    text-align: right;
 }
 
 /**********
